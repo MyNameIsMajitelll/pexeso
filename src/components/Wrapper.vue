@@ -31,7 +31,7 @@
                 </tr>
             </table>
 
-            <button @click="backToHome()">naspat</button>
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">naspat</button>
         </div>
         
     </div>
@@ -40,7 +40,7 @@
         <div>
             <img src="../assets/cat-close.png" alt="" /> <br>
 
-            <button @click="backToHome()">naspat</button>
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">naspat</button>
         </div>
     </div> 
   </div>
