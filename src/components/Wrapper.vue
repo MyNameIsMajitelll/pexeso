@@ -9,11 +9,10 @@
         <h1>{{ msg }}</h1>
 
         <div class="btns">
-            <button @click="setSize({x: 2, y: 3})">2 x 3</button>
-            <button @click="setSize({x: 4, y: 3})">4 x 3</button>
-            <button @click="setSize({x: 4, y: 4})">4 x 4</button>
-            <button @click="setSize({x: 5, y: 4})">5 x 4</button>
-            <button @click="setSize({x: 6, y: 6})">6 x 6</button>
+            <button @click="setSize({x: 2, y: 3})">I.</button>
+            <button @click="setSize({x: 3, y: 4})">II.</button>
+            <button @click="setSize({x: 4, y: 4})">III.</button>
+            <button @click="setSize({x: 4, y: 5})">IV.</button>
         </div>
         <i>Od Románka pro Klárku.</i>
 
@@ -91,6 +90,9 @@ export default {
 
     .wrapper {
         height: 100%;
+        h1 {
+            margin-bottom: 28px;
+        }
     }
     .is-playing {
         display: flex;
