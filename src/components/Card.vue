@@ -1,11 +1,12 @@
 <template>
     <div @click="flip()"  :class="{'flip-card': true, 'flipped': isFlipped, 'found': isCardFound}">
         <div class="flip-card-inner">
-            <div class="flip-card-front">
-                X {{ id }}
-            </div>
-            <div class="flip-card-back" v-bind:style="{ backgroundImage: 'url(../assets/pexeso/1.jpg)' }">
+            <div class="flip-card-front" :style="{ backgroundImage: 'url(' + require('@/assets/pexeso-back.png') + ')' }">
                 {{ id }}
+            </div>
+            <div 
+                class="flip-card-back" 
+                :style="{ backgroundImage: 'url(' + require('@/assets/pexeso/' + id + '.jpg') + ')' }">
             </div>
         </div>
     </div>
@@ -23,6 +24,10 @@
         methods: {
             flip() {
                 this.$store.dispatch('cardFlip', this.position);
+            },
+        
+            imageUrl() {
+                return `@/assets/pexeso/${this.id}.jpg`
             }
         },
 
@@ -72,24 +77,26 @@
 
         &-front, &-back {
             position: absolute;
+            border-radius: 4px;
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             -webkit-backface-visibility: hidden; /* Safari */
             backface-visibility: hidden;
         }
 
         &-front {
-            background-color: rgb(228, 228, 228);
-            color: black;
+            background-color: #FAD2A1;
+            background-size: 60%;
+            background-repeat: no-repeat;
+            background-position: center center;
         }
 
         &-back {
-            background-color: dodgerblue;
-            color: white;
             transform: rotateY(180deg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            
         }
     }
 </style>

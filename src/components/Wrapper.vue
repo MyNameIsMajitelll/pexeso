@@ -3,7 +3,7 @@
     
     <div class="home" v-if="gameState === 'home'">
         <div>
-            <img src="../assets/cat-open.png" alt="" />
+            <Cat />
         </div>
 
         <h1>{{ msg }}</h1>
@@ -49,11 +49,13 @@
 <script>
 
 import Card from './Card';
+import Cat from './Cat';
 
 export default {
   name: 'Wrapper',
   components: {
-      Card
+      Card,
+      Cat
   },
   props: {
     msg: String

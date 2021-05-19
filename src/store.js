@@ -10,7 +10,7 @@ export default createStore({
         size: {
             x: 4, y: 4
         },
-        cardsInit: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
+        cardsInit: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
         cards: [],
         cardsShuffled: [],
         cardsFlipped: [],
@@ -91,7 +91,7 @@ export default createStore({
         },
 
         async flippedCardsSame({commit, state, getters, dispatch}) {
-            await timeout(500);
+            await timeout(1000);
 
             commit('cardsFound', state.cardsFlipped);
             commit('clearFlipped');
