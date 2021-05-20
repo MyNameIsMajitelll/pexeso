@@ -6,7 +6,7 @@ export default createStore({
     state () {
       return {
         count: 0,
-        state: 'home',
+        state: 'is-playing',
         size: {
             x: 4, y: 4
         },
@@ -48,7 +48,6 @@ export default createStore({
                             .slice(0, size)
       },
       shuffle(state) {
-          console.log(state.cards);
         state.cardsShuffled = [...state.cards, ...state.cards]
                                         .sort(() => Math.random() - 0.5)
                                         .sort(() => Math.random() - 0.5);

@@ -86,7 +86,7 @@
 
         &-front {
             background-color: #f9e2ae;
-            background-size: 60%;
+            background-size: 50%;
             background-repeat: no-repeat;
             background-position: center center;
         }

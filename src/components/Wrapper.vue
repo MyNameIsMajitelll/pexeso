@@ -29,8 +29,12 @@
                     </td>
                 </tr>
             </table>
-
+            
             <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">naspat</button>
+
+            <div class="detail">
+                <CardDetail></CardDetail>
+            </div>
         </div>
         
     </div>
@@ -49,12 +53,14 @@
 <script>
 
 import Card from './Card';
+import CardDetail from './CardDetail';
 import Cat from './Cat';
 
 export default {
   name: 'Wrapper',
   components: {
       Card,
+      CardDetail,
       Cat
   },
   props: {
@@ -89,7 +95,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    $width: 350px;
+    
     .wrapper {
         height: 100%;
         h1 {
@@ -97,6 +104,7 @@ export default {
         }
     }
     .is-playing {
+        position: relative;
         display: flex;
         height: 100%;
         flex-direction: column;
@@ -104,7 +112,7 @@ export default {
 
         table {
             height: 350px;
-            width: 350px;
+            width: $width;
             margin: 0 auto;
             margin-bottom: 32px;
             table-layout: fixed;
@@ -113,6 +121,18 @@ export default {
                 text-align: center;
                 padding: 4px;
             }
+        }
+
+        .detail {
+            $widthDetail: $width - 40px;
+            $heightDetail: 300px;
+
+            position: absolute;
+            height: 300px;
+            width: $widthDetail;
+            background: red;
+            left: calc(50% - #{$widthDetail/2});
+            top: calc(50% - #{$heightDetail/2});
         }
     }
 
