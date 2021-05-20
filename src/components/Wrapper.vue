@@ -32,9 +32,13 @@
             
             <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">naspat</button>
 
-            <div class="detail">
-                <CardDetail></CardDetail>
-            </div>
+            
+            <transition name="fade">
+                <div class="detail" v-if="cardDetail">
+                    <CardDetail></CardDetail>
+                </div>
+            </transition>
+            
         </div>
         
     </div>
@@ -72,6 +76,7 @@ export default {
     boardSize() { return this.$store.state.size },
     isGameOver() { return this.$store.getters.isGameOver;  },
     gameState() { return this.$store.state.state;  },
+    cardDetail() { return this.$store.state.cardDetail;  },
   },
 
   beforeMount() {
@@ -96,6 +101,13 @@ export default {
 
 <style lang="scss" scoped>
     $width: 350px;
+
+    .fade-enter-active, .fade-leave-active {
+       transition: opacity 1s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
     
     .wrapper {
         height: 100%;
@@ -125,14 +137,15 @@ export default {
 
         .detail {
             $widthDetail: $width - 40px;
-            $heightDetail: 300px;
+            $heightDetail: 400px;
 
             position: absolute;
-            height: 300px;
+            height: $heightDetail;
             width: $widthDetail;
             background: red;
             left: calc(50% - #{$widthDetail/2});
             top: calc(50% - #{$heightDetail/2});
+
         }
     }
 

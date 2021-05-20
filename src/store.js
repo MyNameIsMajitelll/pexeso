@@ -14,7 +14,10 @@ export default createStore({
         cards: [],
         cardsShuffled: [],
         cardsFlipped: [],
-        cardsFound: []
+        cardsFound: [],
+        cardDetail: false,
+        cardDetailImage: null,
+
       }
     },
     getters: {
@@ -64,7 +67,10 @@ export default createStore({
       },
       setState(state, st) {
         state.state = st
-      }
+      },
+      cardDetailShow(state) { state.cardDetail = true },
+      cardDetailHide(state) { state.cardDetail = false },
+      cardDetailImage(state, id) { state.cardDetailImage = id }
     },
     actions: {
         shuffle({commit}) {
@@ -91,6 +97,12 @@ export default createStore({
 
         async flippedCardsSame({commit, state, getters, dispatch}) {
             await timeout(1000);
+            dispatch('cardDetailShow', state.cardsShuffled[state.cardsFlipped[0]]);
+
+            await timeout(2200);
+            dispatch('cardDetailHide');
+
+            await timeout(400);
 
             commit('cardsFound', state.cardsFlipped);
             commit('clearFlipped');
@@ -117,7 +129,14 @@ export default createStore({
         },
         home({commit}) {
             commit('setState', 'home')
-        }
+        },
+        async cardDetailShow({commit}, id) {
+            commit('cardDetailImage', id);
+            commit('cardDetailShow');
+            
+        },
+        cardDetailHide({commit}) { commit('cardDetailHide') }
+
     
     }
   })
