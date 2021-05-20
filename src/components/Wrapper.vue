@@ -3,7 +3,7 @@
     
     <div class="home" v-if="gameState === 'home'">
         <div>
-            <img src="../assets/cat-open.png" alt="" />
+            <Cat />
         </div>
 
         <h1>{{ msg }}</h1>
@@ -30,7 +30,15 @@
                 </tr>
             </table>
 
-            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">zpatki</button>
+            
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">naspat</button>
+
+            <transition name="fade">
+                <div class="detail" v-if="cardDetail">
+                    <CardDetail></CardDetail>
+                </div>
+            </transition>
+            
         </div>
         
     </div>
@@ -53,11 +61,15 @@
 <script>
 
 import Card from './Card';
+import CardDetail from './CardDetail';
+import Cat from './Cat';
 
 export default {
   name: 'Wrapper',
   components: {
-      Card
+      Card,
+      CardDetail,
+      Cat
   },
   props: {
     msg: String
@@ -68,6 +80,7 @@ export default {
     boardSize() { return this.$store.state.size },
     isGameOver() { return this.$store.getters.isGameOver;  },
     gameState() { return this.$store.state.state;  },
+    cardDetail() { return this.$store.state.cardDetail;  },
   },
 
   beforeMount() {
@@ -92,7 +105,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    $width: 350px;
 
+    .fade-enter-active, .fade-leave-active {
+       transition: opacity 1s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+    }
+    
     .wrapper {
         height: 100%;
         h1 {
@@ -100,6 +121,7 @@ export default {
         }
     }
     .is-playing {
+        position: relative;
         display: flex;
         height: 100%;
         flex-direction: column;
@@ -107,7 +129,7 @@ export default {
 
         table {
             height: 350px;
-            width: 350px;
+            width: $width;
             margin: 0 auto;
             margin-bottom: 32px;
             table-layout: fixed;
@@ -116,6 +138,19 @@ export default {
                 text-align: center;
                 padding: 4px;
             }
+        }
+
+        .detail {
+            $widthDetail: $width - 40px;
+            $heightDetail: 400px;
+
+            position: absolute;
+            height: $heightDetail;
+            width: $widthDetail;
+            background: red;
+            left: calc(50% - #{$widthDetail/2});
+            top: calc(50% - #{$heightDetail/2});
+
         }
     }
 

@@ -6,15 +6,18 @@ export default createStore({
     state () {
       return {
         count: 0,
-        state: 'home',
+        state: 'is-playing',
         size: {
             x: 4, y: 4
         },
-        cardsInit: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
+        cardsInit: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
         cards: [],
         cardsShuffled: [],
         cardsFlipped: [],
-        cardsFound: []
+        cardsFound: [],
+        cardDetail: false,
+        cardDetailImage: null,
+
       }
     },
     getters: {
@@ -48,7 +51,6 @@ export default createStore({
                             .slice(0, size)
       },
       shuffle(state) {
-          console.log(state.cards);
         state.cardsShuffled = [...state.cards, ...state.cards]
                                         .sort(() => Math.random() - 0.5)
                                         .sort(() => Math.random() - 0.5);
@@ -65,7 +67,10 @@ export default createStore({
       },
       setState(state, st) {
         state.state = st
-      }
+      },
+      cardDetailShow(state) { state.cardDetail = true },
+      cardDetailHide(state) { state.cardDetail = false },
+      cardDetailImage(state, id) { state.cardDetailImage = id }
     },
     actions: {
         shuffle({commit}) {
@@ -91,7 +96,13 @@ export default createStore({
         },
 
         async flippedCardsSame({commit, state, getters, dispatch}) {
-            await timeout(500);
+            await timeout(1000);
+            dispatch('cardDetailShow', state.cardsShuffled[state.cardsFlipped[0]]);
+
+            await timeout(2200);
+            dispatch('cardDetailHide');
+
+            await timeout(400);
 
             commit('cardsFound', state.cardsFlipped);
             commit('clearFlipped');
@@ -118,7 +129,14 @@ export default createStore({
         },
         home({commit}) {
             commit('setState', 'home')
-        }
+        },
+        async cardDetailShow({commit}, id) {
+            commit('cardDetailImage', id);
+            commit('cardDetailShow');
+            
+        },
+        cardDetailHide({commit}) { commit('cardDetailHide') }
+
     
     }
   })
