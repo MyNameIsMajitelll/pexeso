@@ -1,7 +1,7 @@
 <template>
     <div @click="flip()"  :class="{'flip-card': true, 'flipped': isFlipped, 'found': isCardFound}">
         <div class="flip-card-inner">
-            <div class="flip-card-front" :style="{ backgroundImage: 'url(' + require('@/assets/pexeso-back.png') + ')' }">
+            <div class="flip-card-front" :style="{ backgroundImage: 'url(' + require('@/assets/cat-close-transparent.png') + ')' }">
                 {{ id }}
             </div>
             <div 
@@ -85,7 +85,7 @@
         }
 
         &-front {
-            background-color: #FAD2A1;
+            background-color: #f9e2ae;
             background-size: 60%;
             background-repeat: no-repeat;
             background-position: center center;
@@ -96,7 +96,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
-            
+
         }
     }
 </style>

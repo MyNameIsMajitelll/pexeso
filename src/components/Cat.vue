@@ -226,36 +226,25 @@ export default {
     msg: String
   },
 
-  computed: {},
-
-  beforeMount() {
-
-      
-  },
+  beforeMount() {},
 
   mounted() {
-        this.ok()
+    this.ok()
   },
 
   methods: {
       ok() {
-        const mySvg = SVG('#cat');
-        const head = mySvg.findOne('#cat-head');
-        const legLeft = mySvg.findOne('#cat-leg-left');
-        const legRight = mySvg.findOne('#cat-leg-right');
+        const parts = this.getParts();
 
-        // head.animate({
-        //     duration: 150,
-        //     delay: 0,
-        //     swing: true,
-        //     times: 4,
-        //     wait: 100
-        // }).dmove(.2,1);
+        parts.head.animate({
+            duration: 150,
+            delay: 0,
+            swing: true,
+            times: 4,
+            wait: 100
+        }).dmove(.2,1);
 
-        const runner = head.animate();
-        runner.dmove(5, 1).animate({swing: true});
-
-        legLeft.animate({
+        parts.legLeft.animate({
             duration: 150,
             delay: 0,
             swing: true,
@@ -263,14 +252,23 @@ export default {
             wait: 100
         }).dmove(.2,0)
 
-        legRight.animate({
+        parts.legRight.animate({
             duration: 150,
             delay: 0,
             swing: true,
             times: 4,
             wait: 100
         }).dmove(-0.2, .2);
-      }
+      },
+
+        getParts() {
+            const svg =  SVG('#cat');
+            return {
+                head: svg.findOne('#cat-head'),
+                legLeft: svg.findOne('#cat-leg-left'),
+                legRight: svg.findOne('#cat-leg-right')
+            }
+        }
   }
 }
 </script>
