@@ -212,12 +212,7 @@
     </svg>
 
    <div>
-      <button @click="ok()" style="
-            background: pink;
-            width: 50px;
-            height: 30px;
-            border-radius: 45px;
-            border: pink;">Ok</button>
+      
    </div>
 </template>
 
