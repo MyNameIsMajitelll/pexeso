@@ -8,7 +8,8 @@
         Pexeso
         <i>Od Románka pro Klárku.</i>
         <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor:pointer">hrat</button>
-    </div> 
+        <button @click="gameOver()" style="background: green;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor: pointer;">konec hry</button>
+    </div>
     
     <div class="home" v-if="gameState === 'home'">
         <div>
@@ -106,6 +107,9 @@ export default {
     },
     backToHome() {
         this.$store.dispatch('home');
+    } ,
+    gameOver() {
+        this.$store.dispatch('gameOver');
     }
   }
 }
