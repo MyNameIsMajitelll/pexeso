@@ -7,7 +7,7 @@
         </div>
         Pexeso
         <i>Od Románka pro Klárku.</i>
-        <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;">hrat</button>
+        <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor:pointer">hrat</button>
     </div> 
     
     <div class="home" v-if="gameState === 'home'">
@@ -40,7 +40,7 @@
             </table>
 
             
-            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">naspat</button>
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">naspat</button>
 
             <transition name="fade">
                 <div class="detail" v-if="cardDetail">
@@ -57,8 +57,8 @@
             <h1 style="color:red">Tadaaaaa</h1>
             <img src="../assets/cat-close.png" alt="" /> <br>
 
-            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">zpatki</button>
-            <button @click="shuffle()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">znovu</button>
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">zpatki</button>
+            <button @click="shuffle()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">znovu</button>
             
         </div>
     
