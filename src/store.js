@@ -6,7 +6,7 @@ export default createStore({
     state () {
       return {
         count: 0,
-        state: 'is-playing',
+        state: 'home',
         size: {
             x: 4, y: 4
         },
@@ -96,7 +96,7 @@ export default createStore({
         },
 
         async flippedCardsSame({commit, state, getters, dispatch}) {
-            await timeout(1000);
+            await timeout(500);
             dispatch('cardDetailShow', state.cardsShuffled[state.cardsFlipped[0]]);
 
             await timeout(2200);

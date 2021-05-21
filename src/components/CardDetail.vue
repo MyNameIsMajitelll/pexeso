@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ backgroundImage: 'url(' + require('@/assets/pexeso/' + id + '.jpg') + ')' }">fff</div>
+  <div :style="{ backgroundImage: 'url(' + require('@/assets/pexeso/' + id + '.jpg') + ')' }"></div>
 </template>
 
 <script>
@@ -11,7 +11,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   div {
     height: 100%;

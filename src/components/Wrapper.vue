@@ -136,16 +136,16 @@ export default {
         }
 
         .detail {
-            $widthDetail: $width - 40px;
+            $widthDetail: $width - 20px;
             $heightDetail: 400px;
 
             position: absolute;
             height: $heightDetail;
+            background: #f9e2ae;
+            border: 10px solid #f9e2ae;
             width: $widthDetail;
-            background: red;
-            left: calc(50% - #{$widthDetail/2});
+            left: calc(50% - #{$widthDetail/2} - 10px);
             top: calc(50% - #{$heightDetail/2});
-
         }
     }
 
