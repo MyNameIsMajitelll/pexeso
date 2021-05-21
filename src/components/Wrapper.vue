@@ -40,7 +40,7 @@
             </table>
 
             
-            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">naspat</button>
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">zpatki</button>
 
             <transition name="fade">
                 <div class="detail" v-if="cardDetail">
