@@ -92,9 +92,7 @@ export default {
     cardDetail() { return this.$store.state.cardDetail;  },
   },
 
-  beforeMount() {
-    this.shuffle();
-  },
+  beforeMount() {},
 
   methods: {
     shuffle() {
