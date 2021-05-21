@@ -122,6 +122,7 @@ export default createStore({
             dispatch('shuffle');
         },
         play({commit}) {
+            console.log('asdas');
             commit('setState', 'is-playing')
         },
         gameOver({commit}) {
