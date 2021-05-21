@@ -6,7 +6,7 @@ export default createStore({
     state () {
       return {
         count: 0,
-        state: 'home',
+        state: 'intro',
         size: {
             x: 4, y: 4
         },
@@ -130,6 +130,9 @@ export default createStore({
         },
         home({commit}) {
             commit('setState', 'home')
+        },
+        intro({commit}) {
+            commit('setState', 'intro')
         },
         async cardDetailShow({commit}, id) {
             commit('cardDetailImage', id);

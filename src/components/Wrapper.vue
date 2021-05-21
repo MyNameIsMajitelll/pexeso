@@ -1,5 +1,14 @@
 <template>
   <div class="wrapper">
+
+    <div class="intro" v-if="gameState === 'intro'">
+        <div>
+            <Cat />
+        </div>
+        hhyhyhyh
+        <i>Od Románka pro Klárku.</i>
+
+    </div> 
     
     <div class="home" v-if="gameState === 'home'">
         <div>
@@ -83,7 +92,9 @@ export default {
     cardDetail() { return this.$store.state.cardDetail;  },
   },
 
-  beforeMount() {},
+  beforeMount() {
+    this.shuffle();
+  },
 
   methods: {
     shuffle() {
