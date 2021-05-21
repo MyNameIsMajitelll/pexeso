@@ -5,9 +5,15 @@
         <div>
             <Cat />
         </div>
-        hhyhyhyh
+        Pexeso
         <i>Od Románka pro Klárku.</i>
-
+        <button @click="backToHome()" style="
+    background: brown;
+    width: 50px;
+    height: 30px;
+    border: brown;
+    border-radius: 29px;
+">hrat</button>
     </div> 
     
     <div class="home" v-if="gameState === 'home'">
@@ -199,6 +205,14 @@ export default {
         img {
             margin-bottom: 32px;
         }
+    }
+
+    .intro {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
 </style>
