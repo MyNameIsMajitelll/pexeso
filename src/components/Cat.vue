@@ -1,5 +1,4 @@
 <template>
-    <!-- <button @click="ok()">Ok</button> -->
     <svg
        xmlns:dc="http://purl.org/dc/elements/1.1/"
        xmlns:cc="http://creativecommons.org/ns#"
@@ -212,6 +211,14 @@
       </g>
     </svg>
 
+   <div>
+      <button @click="ok()" style="
+            background: pink;
+            width: 50px;
+            height: 30px;
+            border-radius: 45px;
+            border: pink;">Ok</button>
+   </div>
 </template>
 
 <script>

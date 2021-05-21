@@ -29,10 +29,10 @@
                     </td>
                 </tr>
             </table>
+
             
             <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">naspat</button>
 
-            
             <transition name="fade">
                 <div class="detail" v-if="cardDetail">
                     <CardDetail></CardDetail>
@@ -45,10 +45,14 @@
 
     <div class="game-over" v-if="gameState === 'game-over'">
         <div>
+            <h1 style="color:red">Tadaaaaa</h1>
             <img src="../assets/cat-close.png" alt="" /> <br>
 
-            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">naspat</button>
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">zpatki</button>
+            <button @click="shuffle()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;">znovu</button>
+            
         </div>
+    
     </div> 
   </div>
 
@@ -86,6 +90,7 @@ export default {
   methods: {
     shuffle() {
       this.$store.dispatch('shuffle');
+      this.$store.dispatch('play');
     },
 
     setSize(size) {
