@@ -20,8 +20,8 @@ jobs:
             ${{ runner.os }}
 
       - uses: bahmutov/npm-install@HEAD
-        with:
-          # working-directory: frontend
+        # with:
+        #   working-directory: frontend
       
       - name: Download firebase binary if not in cache or os change
         if: steps.firebase-bin.outputs.cache-hit != 'true'
