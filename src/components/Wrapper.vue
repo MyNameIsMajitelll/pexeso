@@ -7,13 +7,7 @@
         </div>
         Pexeso
         <i>Od Románka pro Klárku.</i>
-        <button @click="backToHome()" style="
-    background: brown;
-    width: 50px;
-    height: 30px;
-    border: brown;
-    border-radius: 29px;
-">hrat</button>
+        <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;">hrat</button>
     </div> 
     
     <div class="home" v-if="gameState === 'home'">
