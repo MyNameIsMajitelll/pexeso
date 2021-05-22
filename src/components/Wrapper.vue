@@ -30,6 +30,7 @@
 
         <div>
             <button @click="kocka()" style="background: green;width: 118px;height: 53px;border: brown;border-radius: 10px;cursor: pointer;">prani k narozeninam</button>
+            <button @click="intro()" style=" background: red; width: 77px; height: 48px; border: red; border-radius: 22px; cursor: pointer; ">ukoncit hru</button>
         </div>
     </div> 
     
