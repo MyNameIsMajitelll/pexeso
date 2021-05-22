@@ -212,7 +212,6 @@
     </svg>
 
    <div>
-      
    </div>
 </template>
 
@@ -235,8 +234,29 @@ export default {
   },
 
   methods: {
+      leftEyeBlink() {
+         const parts = this.getParts();
+
+         parts.eyeLeft
+         .animate({
+            duration: 100
+         })
+         .transform({
+            scaleY: 0.8
+         })
+         .loop(2, true, 0);
+      },
       ok() {
         const parts = this.getParts();
+
+        parts.eyeLeft
+        .animate({
+           duration: 100
+        })
+        .transform({
+           scaleY: 0.8
+        })
+        .loop(2, true, 0)
 
         parts.head.animate({
             duration: 150,
@@ -268,7 +288,8 @@ export default {
             return {
                 head: svg.findOne('#cat-head'),
                 legLeft: svg.findOne('#cat-leg-left'),
-                legRight: svg.findOne('#cat-leg-right')
+                legRight: svg.findOne('#cat-leg-right'),
+                eyeLeft: svg.findOne('#cat-eye-left'),
             }
         }
   }
