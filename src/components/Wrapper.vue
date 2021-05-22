@@ -124,6 +124,9 @@ export default {
     },
     kocka() {
         this.$store.dispatch('kocka');
+    },
+    intro() {
+        this.$store.dispatch('intro');
     }
   }
 }
