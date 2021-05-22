@@ -134,6 +134,9 @@ export default createStore({
         intro({commit}) {
             commit('setState', 'intro')
         },
+        kocka({commit}) {
+            commit('setState', 'kocka')
+        },
         async cardDetailShow({commit}, id) {
             commit('cardDetailImage', id);
             commit('cardDetailShow');

@@ -9,6 +9,7 @@
         <i>Od Románka pro Klárku.</i>
         <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor:pointer">hrat</button>
         <button @click="gameOver()" style="background: green;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor: pointer;">konec hry</button>
+        
     </div>
     
     <div class="home" v-if="gameState === 'home'">
@@ -24,8 +25,12 @@
             <button @click="setSize({x: 4, y: 4})">III.</button>
             <button @click="setSize({x: 4, y: 5})">IV.</button>
         </div>
-        <i>Od Románka pro Klárku.</i>
+        <i>Od Románka pro Klárku.</i> 
+        <br>
 
+        <div>
+            <button @click="kocka()" style="background: green;width: 118px;height: 53px;border: brown;border-radius: 10px;cursor: pointer;">prani k narozeninam</button>
+        </div>
     </div> 
     
     <div class="is-playing" v-if="gameState === 'is-playing'">
@@ -56,14 +61,19 @@
     <div class="game-over" v-if="gameState === 'game-over'">
         <div>
             <h1 style="color:red">Tadaaaaa</h1>
-            <img src="../assets/cat-close.png" alt="" /> <br>
+            <img src="../assets/cat-close.png" alt="" /> <br/>
 
             <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">zpatki</button>
             <button @click="shuffle()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">znovu</button>
             
         </div>
-    
     </div> 
+
+    <div class="kocka"  v-if="gameState === 'kocka'">
+      <h1>  ahoj klarko tohle je k tvojim narozeninam hodne stesti</h1>             
+       <button @click="backToHome" style=" background: red; width: 95px; height: 50px; border: red; border-radius: 18px; cursor: pointer; ">zpatki</button>
+   </div>    
+    
   </div>
 
 </template>
@@ -107,9 +117,12 @@ export default {
     },
     backToHome() {
         this.$store.dispatch('home');
-    } ,
+    },
     gameOver() {
         this.$store.dispatch('gameOver');
+    },
+    kocka() {
+        this.$store.dispatch('kocka');
     }
   }
 }
@@ -206,6 +219,14 @@ export default {
     }
 
     .intro {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .kocka {
         height: 100%;
         display: flex;
         flex-direction: column;
