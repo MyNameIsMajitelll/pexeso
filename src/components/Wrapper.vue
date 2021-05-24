@@ -80,8 +80,10 @@
     </div> 
 
     <div class="kocka"  v-if="gameState === 'kocka'">
-      <h1>Ahoj Klárko. Tohle je k tvojim narozeninám. Hodně Štěstí.</h1>             
-       <button @click="backToHome" style=" background: red; width: 95px; height: 50px; border: red; border-radius: 18px; cursor: pointer; ">Zpátky</button>
+        <h1>Ahoj Klárko. Tohle je k tvojim narozeninám. Hodně Štěstí.</h1>       
+        <i> - Brácha Románek</i>      
+        <br>
+        <button @click="backToHome" style=" background: red; width: 95px; height: 50px; border: red; border-radius: 18px; cursor: pointer; ">Zpátky</button>
    </div>    
     
   </div>
