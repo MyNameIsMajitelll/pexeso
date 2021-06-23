@@ -30,7 +30,6 @@
 
         <div>
             <button @click="kocka()" style="background: green;width: 118px;height: 53px;border: brown;border-radius: 10px;cursor: pointer;">prani k narozeninam</button>
-            <button @click="gameOver()">konec</button>
         </div>
     </div> 
     
