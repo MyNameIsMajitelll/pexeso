@@ -60,7 +60,6 @@ export default createStore({
       },
       cardsFound(state, cardsPositions) {
           state.cardsFound = [...state.cardsFound, ...cardsPositions];
-          console.log(state.cardsFound);
       },
       setSize(state, {x, y}) {
           state.size = {x, y};
@@ -122,7 +121,6 @@ export default createStore({
             dispatch('shuffle');
         },
         play({commit}) {
-            console.log('asdas');
             commit('setState', 'is-playing')
         },
         gameOver({commit}) {

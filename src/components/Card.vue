@@ -2,7 +2,7 @@
     <div @click="flip()"  :class="{'flip-card': true, 'flipped': isFlipped, 'found': isCardFound}">
         <div class="flip-card-inner">
             <div class="flip-card-front" :style="{ backgroundImage: 'url(' + require('@/assets/cat-close-transparent.png') + ')' }">
-                {{ id }}
+                
             </div>
             <div 
                 class="flip-card-back" 

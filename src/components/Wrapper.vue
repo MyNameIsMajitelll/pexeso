@@ -5,7 +5,7 @@
         <div>
             <Cat />
         </div>
-        Pexeso
+        <h1>Pexeso</h1>
         <i>Od Románka pro Klárku.</i>
         <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor:pointer">hrat</button>
         
@@ -62,7 +62,7 @@
     <div class="game-over" v-if="gameState === 'game-over'">
     
         <div>
-            <h1 style="color:red">Tadaaaaa</h1>
+            <h1 style="color:red">Tadááááá</h1>
             <img src="../assets/cat-close.png" alt="" /> <br/>
 
             <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">zpatky</button>
@@ -72,8 +72,10 @@
     </div> 
 
     <div class="kocka"  v-if="gameState === 'kocka'">
-      <h1>  ahoj klarko tohle je k tvojim narozeninam hodne stesti</h1>             
-       <button @click="backToHome" style=" background: red; width: 95px; height: 50px; border: red; border-radius: 18px; cursor: pointer; ">zpatky</button>
+        <h1>Ahoj Klárko. Tohle je k tvojim narozeninám. Hodně Štěstí.</h1>       
+        <i> - Brácha Románek</i>      
+        <br>
+        <button @click="backToHome" style=" background: red; width: 95px; height: 50px; border: red; border-radius: 18px; cursor: pointer; ">Zpátky</button>
    </div>    
     
   </div>
