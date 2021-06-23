@@ -8,9 +8,9 @@
         Pexeso
         <i>Od Románka pro Klárku.</i>
         <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor:pointer">hrat</button>
-        <button @click="gameOver()" style="background: green;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor: pointer;">konec hry</button>
         
-    </div>
+     </div>   
+    
     
     <div class="home" v-if="gameState === 'home'">
         <div>
@@ -30,7 +30,7 @@
 
         <div>
             <button @click="kocka()" style="background: green;width: 118px;height: 53px;border: brown;border-radius: 10px;cursor: pointer;">prani k narozeninam</button>
-            <button @click="intro()" style=" background: red; width: 77px; height: 48px; border: red; border-radius: 22px; cursor: pointer; ">ukoncit hru</button>
+            <button @click="gameOver()">konec</button>
         </div>
     </div> 
     
@@ -47,7 +47,7 @@
             </table>
 
             
-            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">zpatki</button>
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">zpatky</button>
 
             <transition name="fade">
                 <div class="detail" v-if="cardDetail">
@@ -60,11 +60,12 @@
     </div>
 
     <div class="game-over" v-if="gameState === 'game-over'">
+    
         <div>
             <h1 style="color:red">Tadaaaaa</h1>
             <img src="../assets/cat-close.png" alt="" /> <br/>
 
-            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">zpatki</button>
+            <button @click="backToHome()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">zpatky</button>
             <button @click="shuffle()" style="background: green;width: 100px;height: 50px;border: 5px solid red;border-radius: 50px;cursor:pointer">znovu</button>
             
         </div>
@@ -72,7 +73,7 @@
 
     <div class="kocka"  v-if="gameState === 'kocka'">
       <h1>  ahoj klarko tohle je k tvojim narozeninam hodne stesti</h1>             
-       <button @click="backToHome" style=" background: red; width: 95px; height: 50px; border: red; border-radius: 18px; cursor: pointer; ">zpatki</button>
+       <button @click="backToHome" style=" background: red; width: 95px; height: 50px; border: red; border-radius: 18px; cursor: pointer; ">zpatky</button>
    </div>    
     
   </div>
