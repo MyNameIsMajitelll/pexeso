@@ -7,7 +7,7 @@
         </div>
         <h1>Pexeso</h1>
         <i>Od Románka pro Klárku.</i>
-        <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor:pointer">hrat</button>
+        <button @click="backToHome()" style="background: brown;width: 50px;height: 50px;border: brown;border-radius: 29px;cursor:pointer">Hrát</button>
         
      </div>   
     
