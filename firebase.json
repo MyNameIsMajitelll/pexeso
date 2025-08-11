@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "pexeso-klarka",
+    "site": "pexeso-9ee65",
     "public": "dist",
     "ignore": [
       "firebase.json",
